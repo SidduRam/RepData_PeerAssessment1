@@ -1,7 +1,4 @@
-## Put comments here that give an overall description of what your
-## functions do  - # c=rbind(c(1, -1/4), c(-1/4, 1)) - Matrix format
-
-## Write a short comment describing this function
+## Functions will store a numeric / matrix vector and cache the 'Matrix Inverse' value
 
 makeCacheMatrix <- function(mtx = matrix()) {
   inverse <- NULL
@@ -15,6 +12,7 @@ makeCacheMatrix <- function(mtx = matrix()) {
   return(list(set = set, get = get, setinverse = setinverse, getinverse = getinverse))
 }
 
+# Calculate the 'Inverse' value of Matrix and cache it for next ref.
 cacheSolve <- function(mtx, ...) {
   inverse <- mtx$getinverse()
   if(!is.null(inverse)) {
